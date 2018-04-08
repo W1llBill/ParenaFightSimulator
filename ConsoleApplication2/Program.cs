@@ -501,7 +501,7 @@ namespace ParenaFightSimulator
         }
 
         //Fight function for when user wants to find the average win percent against all other fighters
-        static string AvgFight(string classs, string weapon, int numFights)
+        static string AvgFight(string fighterClass, string weapon, int numFights)
         {
 
             //create an array with a columb of classes, and 10 rows of weapons
@@ -540,10 +540,10 @@ namespace ParenaFightSimulator
                     int avgFighterLP = FighterLP(fighters[c, 0], fighters[c, w]);
                     
                     //assign stats to the choosen fighter
-                    int choosenFighterIN = FighterIN(classs, weapon);
-                    int choosenFighterAT = FighterAT(classs, weapon);
-                    int choosenFighterPA = FighterPA(classs, weapon);
-                    int choosenFighterLP = FighterLP(classs, weapon);
+                    int choosenFighterIN = FighterIN(fighterClass, weapon);
+                    int choosenFighterAT = FighterAT(fighterClass, weapon);
+                    int choosenFighterPA = FighterPA(fighterClass, weapon);
+                    int choosenFighterLP = FighterLP(fighterClass, weapon);
 
                     //get the winner of the fight between the opponent and choosen fighter
                     int AvgFightWinner = Fight(choosenFighterIN, choosenFighterAT, choosenFighterPA, choosenFighterLP, avgFighterIN, avgFighterAT, avgFighterPA, avgFighterLP);
@@ -568,12 +568,12 @@ namespace ParenaFightSimulator
 
             //determine win percentage
             int avgWinPercent = 100 * avgFightWins / avgNumFights;
-            Console.WriteLine("Your " + classs + " wielding a " + weapon + " beat " + avgWinPercent + "% of opponents, out of a total " + avgNumFights + " fights!");
+            Console.WriteLine("Your " + fighterClass + " wielding a " + weapon + " beat " + avgWinPercent + "% of opponents, out of a total " + avgNumFights + " fights!");
             return "";
         }
 
         //function to assign Initiative value based on class and weapon
-        static int FighterIN(string classs, string weapon)
+        static int FighterIN(string fighterClass, string weapon)
         {
             int IN1 = 0;
             int AT1 = 0;
@@ -581,70 +581,70 @@ namespace ParenaFightSimulator
             int LP1 = 3;
 
             //assign values based on inputed class
-            if (classs.Equals("gladiator", StringComparison.InvariantCultureIgnoreCase))
+            if (fighterClass.Equals("gladiator", StringComparison.InvariantCultureIgnoreCase))
             {
                 IN1 = 9;
                 AT1 = 10;
                 PA1 = 8;
                 LP1 = 3;
             }
-            if (classs.Equals("warrior", StringComparison.InvariantCultureIgnoreCase))
+            if (fighterClass.Equals("warrior", StringComparison.InvariantCultureIgnoreCase))
             {
                 IN1 = 9;
                 AT1 = 8;
                 PA1 = 10;
                 LP1 = 3;
             }
-            if (classs.Equals("knight", StringComparison.InvariantCultureIgnoreCase))
+            if (fighterClass.Equals("knight", StringComparison.InvariantCultureIgnoreCase))
             {
                 IN1 = 9;
                 AT1 = 7;
                 PA1 = 11;
                 LP1 = 3;
             }
-            if (classs.Equals("barbarian", StringComparison.InvariantCultureIgnoreCase))
+            if (fighterClass.Equals("barbarian", StringComparison.InvariantCultureIgnoreCase))
             {
                 IN1 = 7;
                 AT1 = 12;
                 PA1 = 7;
                 LP1 = 3;
             }
-            if (classs.Equals("dwarf", StringComparison.InvariantCultureIgnoreCase))
+            if (fighterClass.Equals("dwarf", StringComparison.InvariantCultureIgnoreCase))
             {
                 IN1 = 7;
                 AT1 = 8;
                 PA1 = 11;
                 LP1 = 3;
             }
-            if (classs.Equals("elf", StringComparison.InvariantCultureIgnoreCase))
+            if (fighterClass.Equals("elf", StringComparison.InvariantCultureIgnoreCase))
             {
                 IN1 = 11;
                 AT1 = 9;
                 PA1 = 8;
                 LP1 = 3;
             }
-            if (classs.Equals("orc", StringComparison.InvariantCultureIgnoreCase))
+            if (fighterClass.Equals("orc", StringComparison.InvariantCultureIgnoreCase))
             {
                 IN1 = 7;
                 AT1 = 10;
                 PA1 = 9;
                 LP1 = 3;
             }
-            if (classs.Equals("theif", StringComparison.InvariantCultureIgnoreCase))
+            if (fighterClass.Equals("theif", StringComparison.InvariantCultureIgnoreCase))
             {
                 IN1 = 11;
                 AT1 = 8;
                 PA1 = 9;
                 LP1 = 3;
             }
-            if (classs.Equals("pirate", StringComparison.InvariantCultureIgnoreCase))
+            if (fighterClass.Equals("pirate", StringComparison.InvariantCultureIgnoreCase))
             {
                 IN1 = 9;
                 AT1 = 9;
                 PA1 = 9;
                 LP1 = 3;
             }
-            if (classs.Equals("mercenary", StringComparison.InvariantCultureIgnoreCase))
+            if (fighterClass.Equals("mercenary", StringComparison.InvariantCultureIgnoreCase))
             {
                 IN1 = 9;
                 AT1 = 11;
@@ -715,77 +715,77 @@ namespace ParenaFightSimulator
         }
 
         //function to assign Attack value based on class and weapon
-        static int FighterAT(string classs, string weapon)
+        static int FighterAT(string fighterClass, string weapon)
         {
             int IN1 = 0;
             int AT1 = 0;
             int PA1 = 0;
             int LP1 = 3;
 
-            if (classs.Equals("gladiator", StringComparison.InvariantCultureIgnoreCase))
+            if (fighterClass.Equals("gladiator", StringComparison.InvariantCultureIgnoreCase))
             {
                 IN1 = 9;
                 AT1 = 10;
                 PA1 = 8;
                 LP1 = 3;
             }
-            if (classs.Equals("warrior", StringComparison.InvariantCultureIgnoreCase))
+            if (fighterClass.Equals("warrior", StringComparison.InvariantCultureIgnoreCase))
             {
                 IN1 = 9;
                 AT1 = 8;
                 PA1 = 10;
                 LP1 = 3;
             }
-            if (classs.Equals("knight", StringComparison.InvariantCultureIgnoreCase))
+            if (fighterClass.Equals("knight", StringComparison.InvariantCultureIgnoreCase))
             {
                 IN1 = 9;
                 AT1 = 7;
                 PA1 = 11;
                 LP1 = 3;
             }
-            if (classs.Equals("barbarian", StringComparison.InvariantCultureIgnoreCase))
+            if (fighterClass.Equals("barbarian", StringComparison.InvariantCultureIgnoreCase))
             {
                 IN1 = 7;
                 AT1 = 12;
                 PA1 = 7;
                 LP1 = 3;
             }
-            if (classs.Equals("dwarf", StringComparison.InvariantCultureIgnoreCase))
+            if (fighterClass.Equals("dwarf", StringComparison.InvariantCultureIgnoreCase))
             {
                 IN1 = 7;
                 AT1 = 8;
                 PA1 = 11;
                 LP1 = 3;
             }
-            if (classs.Equals("elf", StringComparison.InvariantCultureIgnoreCase))
+            if (fighterClass.Equals("elf", StringComparison.InvariantCultureIgnoreCase))
             {
                 IN1 = 11;
                 AT1 = 9;
                 PA1 = 8;
                 LP1 = 3;
             }
-            if (classs.Equals("orc", StringComparison.InvariantCultureIgnoreCase))
+            if (fighterClass.Equals("orc", StringComparison.InvariantCultureIgnoreCase))
             {
                 IN1 = 7;
                 AT1 = 10;
                 PA1 = 9;
                 LP1 = 3;
             }
-            if (classs.Equals("theif", StringComparison.InvariantCultureIgnoreCase))
+            if (fighterClass.Equals("theif", StringComparison.InvariantCultureIgnoreCase))
             {
                 IN1 = 11;
                 AT1 = 8;
                 PA1 = 9;
                 LP1 = 3;
             }
-            if (classs.Equals("pirate", StringComparison.InvariantCultureIgnoreCase))
+            if (fighterClass.Equals("pirate", StringComparison.InvariantCultureIgnoreCase))
             {
                 IN1 = 9;
                 AT1 = 9;
                 PA1 = 9;
                 LP1 = 3;
             }
-            if (classs.Equals("mercenary", StringComparison.InvariantCultureIgnoreCase))
+            if (fighterClass.Equals("mercenary", StringComparison.InvariantCultureIgnoreCase))
             {
                 IN1 = 9;
                 AT1 = 11;
@@ -853,77 +853,77 @@ namespace ParenaFightSimulator
         }
 
         //function to assign Parry value based on class and weapon
-        static int FighterPA(string classs, string weapon)
+        static int FighterPA(string fighterClass, string weapon)
         {
             int IN1 = 0;
             int AT1 = 0;
             int PA1 = 0;
             int LP1 = 3;
 
-            if (classs.Equals("gladiator", StringComparison.InvariantCultureIgnoreCase))
+            if (fighterClass.Equals("gladiator", StringComparison.InvariantCultureIgnoreCase))
             {
                 IN1 = 9;
                 AT1 = 10;
                 PA1 = 8;
                 LP1 = 3;
             }
-            if (classs.Equals("warrior", StringComparison.InvariantCultureIgnoreCase))
+            if (fighterClass.Equals("warrior", StringComparison.InvariantCultureIgnoreCase))
             {
                 IN1 = 9;
                 AT1 = 8;
                 PA1 = 10;
                 LP1 = 3;
             }
-            if (classs.Equals("knight", StringComparison.InvariantCultureIgnoreCase))
+            if (fighterClass.Equals("knight", StringComparison.InvariantCultureIgnoreCase))
             {
                 IN1 = 9;
                 AT1 = 7;
                 PA1 = 11;
                 LP1 = 3;
             }
-            if (classs.Equals("barbarian", StringComparison.InvariantCultureIgnoreCase))
+            if (fighterClass.Equals("barbarian", StringComparison.InvariantCultureIgnoreCase))
             {
                 IN1 = 7;
                 AT1 = 12;
                 PA1 = 7;
                 LP1 = 3;
             }
-            if (classs.Equals("dwarf", StringComparison.InvariantCultureIgnoreCase))
+            if (fighterClass.Equals("dwarf", StringComparison.InvariantCultureIgnoreCase))
             {
                 IN1 = 7;
                 AT1 = 8;
                 PA1 = 11;
                 LP1 = 3;
             }
-            if (classs.Equals("elf", StringComparison.InvariantCultureIgnoreCase))
+            if (fighterClass.Equals("elf", StringComparison.InvariantCultureIgnoreCase))
             {
                 IN1 = 11;
                 AT1 = 9;
                 PA1 = 8;
                 LP1 = 3;
             }
-            if (classs.Equals("orc", StringComparison.InvariantCultureIgnoreCase))
+            if (fighterClass.Equals("orc", StringComparison.InvariantCultureIgnoreCase))
             {
                 IN1 = 7;
                 AT1 = 10;
                 PA1 = 9;
                 LP1 = 3;
             }
-            if (classs.Equals("theif", StringComparison.InvariantCultureIgnoreCase))
+            if (fighterClass.Equals("theif", StringComparison.InvariantCultureIgnoreCase))
             {
                 IN1 = 11;
                 AT1 = 8;
                 PA1 = 9;
                 LP1 = 3;
             }
-            if (classs.Equals("pirate", StringComparison.InvariantCultureIgnoreCase))
+            if (fighterClass.Equals("pirate", StringComparison.InvariantCultureIgnoreCase))
             {
                 IN1 = 9;
                 AT1 = 9;
                 PA1 = 9;
                 LP1 = 3;
             }
-            if (classs.Equals("mercenary", StringComparison.InvariantCultureIgnoreCase))
+            if (fighterClass.Equals("mercenary", StringComparison.InvariantCultureIgnoreCase))
             {
                 IN1 = 9;
                 AT1 = 11;
@@ -991,77 +991,77 @@ namespace ParenaFightSimulator
         }
 
         //function to assign Lifepoints value based on class and weapon
-        static int FighterLP(string classs, string weapon)
+        static int FighterLP(string fighterClass, string weapon)
         {
             int IN1 = 0;
             int AT1 = 0;
             int PA1 = 0;
             int LP1 = 3;
 
-            if (classs.Equals("gladiator", StringComparison.InvariantCultureIgnoreCase))
+            if (fighterClass.Equals("gladiator", StringComparison.InvariantCultureIgnoreCase))
             {
                 IN1 = 9;
                 AT1 = 10;
                 PA1 = 8;
                 LP1 = 3;
             }
-            if (classs.Equals("warrior", StringComparison.InvariantCultureIgnoreCase))
+            if (fighterClass.Equals("warrior", StringComparison.InvariantCultureIgnoreCase))
             {
                 IN1 = 9;
                 AT1 = 8;
                 PA1 = 10;
                 LP1 = 3;
             }
-            if (classs.Equals("knight", StringComparison.InvariantCultureIgnoreCase))
+            if (fighterClass.Equals("knight", StringComparison.InvariantCultureIgnoreCase))
             {
                 IN1 = 9;
                 AT1 = 7;
                 PA1 = 11;
                 LP1 = 3;
             }
-            if (classs.Equals("barbarian", StringComparison.InvariantCultureIgnoreCase))
+            if (fighterClass.Equals("barbarian", StringComparison.InvariantCultureIgnoreCase))
             {
                 IN1 = 7;
                 AT1 = 12;
                 PA1 = 7;
                 LP1 = 3;
             }
-            if (classs.Equals("dwarf", StringComparison.InvariantCultureIgnoreCase))
+            if (fighterClass.Equals("dwarf", StringComparison.InvariantCultureIgnoreCase))
             {
                 IN1 = 7;
                 AT1 = 8;
                 PA1 = 11;
                 LP1 = 3;
             }
-            if (classs.Equals("elf", StringComparison.InvariantCultureIgnoreCase))
+            if (fighterClass.Equals("elf", StringComparison.InvariantCultureIgnoreCase))
             {
                 IN1 = 11;
                 AT1 = 9;
                 PA1 = 8;
                 LP1 = 3;
             }
-            if (classs.Equals("orc", StringComparison.InvariantCultureIgnoreCase))
+            if (fighterClass.Equals("orc", StringComparison.InvariantCultureIgnoreCase))
             {
                 IN1 = 7;
                 AT1 = 10;
                 PA1 = 9;
                 LP1 = 3;
             }
-            if (classs.Equals("theif", StringComparison.InvariantCultureIgnoreCase))
+            if (fighterClass.Equals("theif", StringComparison.InvariantCultureIgnoreCase))
             {
                 IN1 = 11;
                 AT1 = 8;
                 PA1 = 9;
                 LP1 = 3;
             }
-            if (classs.Equals("pirate", StringComparison.InvariantCultureIgnoreCase))
+            if (fighterClass.Equals("pirate", StringComparison.InvariantCultureIgnoreCase))
             {
                 IN1 = 9;
                 AT1 = 9;
                 PA1 = 9;
                 LP1 = 3;
             }
-            if (classs.Equals("mercenary", StringComparison.InvariantCultureIgnoreCase))
+            if (fighterClass.Equals("mercenary", StringComparison.InvariantCultureIgnoreCase))
             {
                 IN1 = 9;
                 AT1 = 11;
