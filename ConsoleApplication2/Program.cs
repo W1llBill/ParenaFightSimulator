@@ -24,15 +24,15 @@ namespace ParenaFightSimulator
             Console.WriteLine("Welcome to Parena.fun Fight Simulator!");
             Console.WriteLine("");
             Console.WriteLine("List of Classes:");
-            Console.WriteLine("Gladiator     Warrior     Knight");
-            Console.WriteLine("Barbarian     Dwarf       Elf");
-            Console.WriteLine("Orc           Theif       Pirate");
+            Console.WriteLine("Gladiator\tWarrior\t\tKnight");
+            Console.WriteLine("Barbarian\tDwarf\t\tElf");
+            Console.WriteLine("Orc\t\tTheif\t\tPirate");
             Console.WriteLine("Mercenary");
             Console.WriteLine("");
             Console.WriteLine("List of Weapons");
-            Console.WriteLine("Spear               Sword & Shield     Mace");
-            Console.WriteLine("2-Handed Sword      Axe                Bow");
-            Console.WriteLine("2-Handed Axe        Saber              Orcblade");
+            Console.WriteLine("Spear\t\tSword & Shield\tMace");
+            Console.WriteLine("2-Handed Sword\tAxe\t\tBow");
+            Console.WriteLine("2-Handed Axe\tSaber\t\tOrcblade");
             Console.WriteLine("Daggers (NOTE: Dagger Special Attack Not Implemented.)");
             Console.WriteLine("");
 
