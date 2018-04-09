@@ -662,57 +662,57 @@ namespace ParenaFightSimulator
             switch(weapon)
             {
                 case "spear":
-                    IN1 = IN1 + 5;
+                    IN1 += 5;
                     break;
 
                 case "sword & shield":
-                    IN1 = IN1 - 2;
-                    PA1 = PA1 + 2;
+                    IN1 -= 2;
+                    PA1 += 2;
                     break;
 
                 case "mace":
-                    IN1 = IN1 - 1;
-                    AT1 = AT1 + 2;
+                    IN1 -= 1;
+                    AT1 += 2;
                     break;
 
                 case "2-handed sword":
-                    IN1 = IN1 + 2;
-                    AT1 = AT1 + 2;
-                    PA1 = PA1 - 1;
+                    IN1 += 2;
+                    AT1 += 2;
+                    PA1 -= 1;
                     break;
 
                 case "axe":
-                    IN1 = IN1 - 1;
-                    AT1 = AT1 + 1;
-                    PA1 = PA1 - 2;
+                    IN1 -= 1;
+                    AT1 += 1;
+                    PA1 -= 2;
                     break;
 
                 case "bow":
-                    IN1 = IN1 + 5;
-                    AT1 = AT1 + 2;
-                    PA1 = PA1 - 2;
+                    IN1 += 5;
+                    AT1 += 2;
+                    PA1 -= 2;
                     break;
 
                 case "2-handed axe":
-                    IN1 = IN1 + 2;
-                    AT1 = AT1 + 3;
-                    PA1 = PA1 - 2;
+                    IN1 += 2;
+                    AT1 += 3;
+                    PA1 -= 2;
                     break;
 
                 case "saber":
-                    IN1 = IN1 + 2;
-                    PA1 = PA1 + 1;
+                    IN1 += 2;
+                    PA1 += 1;
                     break;
 
                 case "orcblade":
-                    IN1 = IN1 - 4;
-                    AT1 = AT1 + 3;
+                    IN1 -=4;
+                    AT1 += 3;
                     break;
 
                 case "daggers":
-                    IN1 = IN1 - 3;
-                    AT1 = AT1 - 1;
-                    PA1 = PA1 + 2;
+                    IN1 -= 3;
+                    AT1 -= 1;
+                    PA1 += 2;
                     break;
             }
 
@@ -808,57 +808,57 @@ namespace ParenaFightSimulator
             switch(weapon)
             {
                 case "spear":
-                    IN1 = IN1 + 5;
+                    IN1 += 5;
                     break;
 
                 case "sword & shield":
-                    IN1 = IN1 - 2;
-                    PA1 = PA1 + 2;
+                    IN1 -= 2;
+                    PA1 += 2;
                     break;
 
                 case "mace":
-                    IN1 = IN1 - 1;
-                    AT1 = AT1 + 2;
+                    IN1 -= 1;
+                    AT1 += 2;
                     break;
 
                 case "2-handed sword":
-                    IN1 = IN1 + 2;
-                    AT1 = AT1 + 2;
-                    PA1 = PA1 - 1;
+                    IN1 += 2;
+                    AT1 += 2;
+                    PA1 -= 1;
                     break;
 
                 case "axe":
-                    IN1 = IN1 - 1;
-                    AT1 = AT1 + 1;
-                    PA1 = PA1 - 2;
+                    IN1 -= 1;
+                    AT1 += 1;
+                    PA1 -= 2;
                     break;
 
                 case "bow":
-                    IN1 = IN1 + 5;
-                    AT1 = AT1 + 2;
-                    PA1 = PA1 - 2;
+                    IN1 += 5;
+                    AT1 += 2;
+                    PA1 -= 2;
                     break;
 
                 case "2-handed axe":
-                    IN1 = IN1 + 2;
-                    AT1 = AT1 + 3;
-                    PA1 = PA1 - 2;
+                    IN1 += 2;
+                    AT1 += 3;
+                    PA1 -= 2;
                     break;
 
                 case "saber":
-                    IN1 = IN1 + 2;
-                    PA1 = PA1 + 1;
+                    IN1 += 2;
+                    PA1 += 1;
                     break;
 
                 case "orcblade":
-                    IN1 = IN1 - 4;
-                    AT1 = AT1 + 3;
+                    IN1 -= 4;
+                    AT1 += 3;
                     break;
 
                 case "daggers":
-                    IN1 = IN1 - 3;
-                    AT1 = AT1 - 1;
-                    PA1 = PA1 + 2;
+                    IN1 -= 3;
+                    AT1 -= 1;
+                    PA1 += 2;
                     break;
             }
             
@@ -953,57 +953,57 @@ namespace ParenaFightSimulator
             switch (weapon)
             {
                 case "spear":
-                    IN1 = IN1 + 5;
+                    IN1 += 5;
                     break;
 
                 case "sword & shield":
-                    IN1 = IN1 - 2;
-                    PA1 = PA1 + 2;
+                    IN1 -= 2;
+                    PA1 += 2;
                     break;
 
                 case "mace":
-                    IN1 = IN1 - 1;
-                    AT1 = AT1 + 2;
+                    IN1 -= 1;
+                    AT1 += 2;
                     break;
 
                 case "2-handed sword":
-                    IN1 = IN1 + 2;
-                    AT1 = AT1 + 2;
-                    PA1 = PA1 - 1;
+                    IN1 += 2;
+                    AT1 += 2;
+                    PA1 -= 1;
                     break;
 
                 case "axe":
-                    IN1 = IN1 - 1;
-                    AT1 = AT1 + 1;
-                    PA1 = PA1 - 2;
+                    IN1 -= 1;
+                    AT1 += 1;
+                    PA1 -= 2;
                     break;
 
                 case "bow":
-                    IN1 = IN1 + 5;
-                    AT1 = AT1 + 2;
-                    PA1 = PA1 - 2;
+                    IN1 += 5;
+                    AT1 += 2;
+                    PA1 -= 2;
                     break;
 
                 case "2-handed axe":
-                    IN1 = IN1 + 2;
-                    AT1 = AT1 + 3;
-                    PA1 = PA1 - 2;
+                    IN1 += 2;
+                    AT1 += 3;
+                    PA1 -= 2;
                     break;
 
                 case "saber":
-                    IN1 = IN1 + 2;
-                    PA1 = PA1 + 1;
+                    IN1 += 2;
+                    PA1 += 1;
                     break;
 
                 case "orcblade":
-                    IN1 = IN1 - 4;
-                    AT1 = AT1 + 3;
+                    IN1 -= 4;
+                    AT1 += 3;
                     break;
 
                 case "daggers":
-                    IN1 = IN1 - 3;
-                    AT1 = AT1 - 1;
-                    PA1 = PA1 + 2;
+                    IN1 -= 3;
+                    AT1 -= 1;
+                    PA1 += 2;
                     break;
             }
             return PA1;
@@ -1097,57 +1097,57 @@ namespace ParenaFightSimulator
             switch(weapon)
             {
                 case "spear":
-                    IN1 = IN1 + 5;
+                    IN1 += 5;
                     break;
 
                 case "sword & shield":
-                    IN1 = IN1 - 2;
-                    PA1 = PA1 + 2;
+                    IN1 -= 2;
+                    PA1 += 2;
                     break;
 
                 case "mace":
-                    IN1 = IN1 - 1;
-                    AT1 = AT1 + 2;
+                    IN1 -= 1;
+                    AT1 += 2;
                     break;
 
                 case "2-handed sword":
-                    IN1 = IN1 + 2;
-                    AT1 = AT1 + 2;
-                    PA1 = PA1 - 1;
+                    IN1 += 2;
+                    AT1 += 2;
+                    PA1 -= 1;
                     break;
 
                 case "axe":
-                    IN1 = IN1 - 1;
-                    AT1 = AT1 + 1;
-                    PA1 = PA1 - 2;
+                    IN1 -= 1;
+                    AT1 += 1;
+                    PA1 -= 2;
                     break;
 
                 case "bow":
-                    IN1 = IN1 + 5;
-                    AT1 = AT1 + 2;
-                    PA1 = PA1 - 2;
+                    IN1 += 5;
+                    AT1 += 2;
+                    PA1 -= 2;
                     break;
 
                 case "2-handed axe":
-                    IN1 = IN1 + 2;
-                    AT1 = AT1 + 3;
-                    PA1 = PA1 - 2;
+                    IN1 += 2;
+                    AT1 += 3;
+                    PA1 -= 2;
                     break;
 
                 case "saber":
-                    IN1 = IN1 + 2;
-                    PA1 = PA1 + 1;
+                    IN1 += 2;
+                    PA1 += 1;
                     break;
 
                 case "orcblade":
-                    IN1 = IN1 - 4;
-                    AT1 = AT1 + 3;
+                    IN1 -= 4;
+                    AT1 += 3;
                     break;
 
                 case "daggers":
-                    IN1 = IN1 - 3;
-                    AT1 = AT1 - 1;
-                    PA1 = PA1 + 2;
+                    IN1 -= 3;
+                    AT1 -= 1;
+                    PA1 += 2;
                     break;
             }
             return LP1;
