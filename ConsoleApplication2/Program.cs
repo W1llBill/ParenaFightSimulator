@@ -65,22 +65,19 @@ namespace ParenaFightSimulator
                 ConsoleKeyInfo avginfo = Console.ReadKey();
                 if (avginfo.Key == ConsoleKey.Y)
                 {
-                    Console.WriteLine("");
+                    consoleNewLine(1);
                 }
                 else
                 {
-                    Console.WriteLine("");
-                    Console.WriteLine("");
-                    Console.WriteLine("");
+                    consoleNewLine(3);
                     goto start;
                 }
 
-                Console.WriteLine("");
-
-                Console.WriteLine("");
+                consoleNewLine(2);
 
                 //ask for the number of fighting simulations that the user wants to run
                 Console.WriteLine("Enter the number of fights you wish to take place (NOTE: 1 means 1 fight against ALL other fighters:");
+
             avgfightnum:
                 string avgfightstring = Console.ReadLine();
                 int avgfightnum = 0;
@@ -102,9 +99,7 @@ namespace ParenaFightSimulator
                 ConsoleKeyInfo avginfo2 = Console.ReadKey();
                 if (avginfo2.Key == ConsoleKey.R)
                 {
-                    Console.WriteLine("");
-                    Console.WriteLine("");
-                    Console.WriteLine("");
+                    consoleNewLine(3);
                     goto start;
                 }
                 else
@@ -168,28 +163,26 @@ namespace ParenaFightSimulator
             ConsoleKeyInfo info = Console.ReadKey();
             if (info.Key == ConsoleKey.Y)
             {
-                Console.WriteLine("");
+                consoleNewLine(1);
             }
             else
             {
-                Console.WriteLine("");
-                Console.WriteLine("");
-                Console.WriteLine("");
+                consoleNewLine(3);
                 goto start;
             }
 
 
 
 
-            fights:
+        fights:
 
-            Console.WriteLine("");
-
-            Console.WriteLine("");
+            consoleNewLine(2);
 
             //ask for the number of fights that the user wants to simulate
             Console.WriteLine("Enter the number of fights you wish to take place:");
+
         fightnum:
+
             string fightstring = Console.ReadLine();
             int fightnum = 0;
             if (int.TryParse(fightstring, out fightnum))
@@ -229,7 +222,7 @@ namespace ParenaFightSimulator
                 numfights = winner1 + winner2;
             }
 
-            
+
             int percentwin = 0;
             int numerator = numfights;
             string overallwinner = "";
@@ -446,7 +439,7 @@ namespace ParenaFightSimulator
                 while (LP1 > 0 || LP2 > 0)
                 {
                     //fighter 2 goes first
-                    
+
                     int roll = Roll();
                     System.Threading.Thread.Sleep(roll);
                     Console.WriteLine(roll);
@@ -516,54 +509,54 @@ namespace ParenaFightSimulator
             //runs the for function for the indicated number of fights, each number equals 1 fight against all 100 combinations
             for (int numberOfFights = numFights; numberOfFights > 0; numberOfFights--)
             {
-            //for each class, run the for statement
-            for (c = 0; c < 10; c++)
-            {
-                //for each weapon, run the for statement
-                for (w = 1; w < 11; w++)
+                //for each class, run the for statement
+                for (c = 0; c < 10; c++)
                 {
-                    //for each class and weapon, assign them to the 2 dimensional array
-                    fighters[c, w] = weapons[w];
-                }
-                //reassign the first column of the 2d array to the list of the classes
-                fighters[c, 0] = classes[c];
-            }
-
-            for (c = 0; c < 10; c++)
-            {
-                for (w = 1; w < 11; w++)
-                {
-                    //assign stats to the opponent based on their class and weapon
-                    int avgFighterIN = FighterIN(fighters[c, 0], fighters[c, w]);
-                    int avgFighterAT = FighterAT(fighters[c, 0], fighters[c, w]);
-                    int avgFighterPA = FighterPA(fighters[c, 0], fighters[c, w]);
-                    int avgFighterLP = FighterLP(fighters[c, 0], fighters[c, w]);
-                    
-                    //assign stats to the choosen fighter
-                    int choosenFighterIN = FighterIN(fighterClass, weapon);
-                    int choosenFighterAT = FighterAT(fighterClass, weapon);
-                    int choosenFighterPA = FighterPA(fighterClass, weapon);
-                    int choosenFighterLP = FighterLP(fighterClass, weapon);
-
-                    //get the winner of the fight between the opponent and choosen fighter
-                    int AvgFightWinner = Fight(choosenFighterIN, choosenFighterAT, choosenFighterPA, choosenFighterLP, avgFighterIN, avgFighterAT, avgFighterPA, avgFighterLP);
-                    if (AvgFightWinner == 1)
+                    //for each weapon, run the for statement
+                    for (w = 1; w < 11; w++)
                     {
-                        //print if choosen fighter won
-                        Console.WriteLine("Choosen fighter BEAT a " + classes[c] + " wielding a " + weapons[w] + "!");
-                        //add 1 to win record, add 1 to number of fights; used to determine win percentage
-                        avgFightWins = avgFightWins + 1;
-                        avgNumFights = avgNumFights + 1;
+                        //for each class and weapon, assign them to the 2 dimensional array
+                        fighters[c, w] = weapons[w];
                     }
-                    else
-                    {
-                        //print if choosen fighter lost
-                        Console.WriteLine("Choosen fighter LOST to a " + classes[c] + " wielding a " + weapons[w] + "!");
-                        avgNumFights = avgNumFights + 1;
-                    }
+                    //reassign the first column of the 2d array to the list of the classes
+                    fighters[c, 0] = classes[c];
                 }
 
-            }
+                for (c = 0; c < 10; c++)
+                {
+                    for (w = 1; w < 11; w++)
+                    {
+                        //assign stats to the opponent based on their class and weapon
+                        int avgFighterIN = FighterIN(fighters[c, 0], fighters[c, w]);
+                        int avgFighterAT = FighterAT(fighters[c, 0], fighters[c, w]);
+                        int avgFighterPA = FighterPA(fighters[c, 0], fighters[c, w]);
+                        int avgFighterLP = FighterLP(fighters[c, 0], fighters[c, w]);
+
+                        //assign stats to the choosen fighter
+                        int choosenFighterIN = FighterIN(fighterClass, weapon);
+                        int choosenFighterAT = FighterAT(fighterClass, weapon);
+                        int choosenFighterPA = FighterPA(fighterClass, weapon);
+                        int choosenFighterLP = FighterLP(fighterClass, weapon);
+
+                        //get the winner of the fight between the opponent and choosen fighter
+                        int AvgFightWinner = Fight(choosenFighterIN, choosenFighterAT, choosenFighterPA, choosenFighterLP, avgFighterIN, avgFighterAT, avgFighterPA, avgFighterLP);
+                        if (AvgFightWinner == 1)
+                        {
+                            //print if choosen fighter won
+                            Console.WriteLine("Choosen fighter BEAT a " + classes[c] + " wielding a " + weapons[w] + "!");
+                            //add 1 to win record, add 1 to number of fights; used to determine win percentage
+                            avgFightWins = avgFightWins + 1;
+                            avgNumFights = avgNumFights + 1;
+                        }
+                        else
+                        {
+                            //print if choosen fighter lost
+                            Console.WriteLine("Choosen fighter LOST to a " + classes[c] + " wielding a " + weapons[w] + "!");
+                            avgNumFights = avgNumFights + 1;
+                        }
+                    }
+
+                }
             }
 
             //determine win percentage
@@ -580,7 +573,7 @@ namespace ParenaFightSimulator
             fighterClass = fighterClass.ToLowerInvariant();
 
             //assign values based on inputed class
-            switch(fighterClass)
+            switch (fighterClass)
             {
                 case "gladiator":
                     fighterIN = 9;
@@ -626,7 +619,7 @@ namespace ParenaFightSimulator
             //assign values based on weapon
             weapon = weapon.ToLowerInvariant();
 
-            switch(weapon)
+            switch (weapon)
             {
                 case "spear":
                     fighterIN += 5;
@@ -725,7 +718,7 @@ namespace ParenaFightSimulator
 
             weapon = weapon.ToLowerInvariant();
 
-            switch(weapon)
+            switch (weapon)
             {
 
                 case "mace":
@@ -756,7 +749,7 @@ namespace ParenaFightSimulator
                     fighterAT -= 1;
                     break;
             }
-            
+
             return fighterAT;
         }
 
@@ -767,7 +760,7 @@ namespace ParenaFightSimulator
 
             fighterClass = fighterClass.ToLowerInvariant();
 
-            switch(fighterClass)
+            switch (fighterClass)
             {
                 case "gladiator":
                     fighterPA = 8;
@@ -897,6 +890,14 @@ namespace ParenaFightSimulator
             }
 
             return fighterLP;
+        }
+
+        static void consoleNewLine(int repeats)
+        {
+            for (int i = 0; i < repeats; i++)
+            {
+                Console.Write("\n");
+            }
         }
     }
 }
