@@ -580,138 +580,144 @@ namespace ParenaFightSimulator
             int PA1 = 0;
             int LP1 = 3;
 
+            fighterClass = fighterClass.ToLowerInvariant();
+
             //assign values based on inputed class
-            if (fighterClass.Equals("gladiator", StringComparison.InvariantCultureIgnoreCase))
+            switch(fighterClass)
             {
-                IN1 = 9;
-                AT1 = 10;
-                PA1 = 8;
-                LP1 = 3;
-            }
-            if (fighterClass.Equals("warrior", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = 9;
-                AT1 = 8;
-                PA1 = 10;
-                LP1 = 3;
-            }
-            if (fighterClass.Equals("knight", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = 9;
-                AT1 = 7;
-                PA1 = 11;
-                LP1 = 3;
-            }
-            if (fighterClass.Equals("barbarian", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = 7;
-                AT1 = 12;
-                PA1 = 7;
-                LP1 = 3;
-            }
-            if (fighterClass.Equals("dwarf", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = 7;
-                AT1 = 8;
-                PA1 = 11;
-                LP1 = 3;
-            }
-            if (fighterClass.Equals("elf", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = 11;
-                AT1 = 9;
-                PA1 = 8;
-                LP1 = 3;
-            }
-            if (fighterClass.Equals("orc", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = 7;
-                AT1 = 10;
-                PA1 = 9;
-                LP1 = 3;
-            }
-            if (fighterClass.Equals("theif", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = 11;
-                AT1 = 8;
-                PA1 = 9;
-                LP1 = 3;
-            }
-            if (fighterClass.Equals("pirate", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = 9;
-                AT1 = 9;
-                PA1 = 9;
-                LP1 = 3;
-            }
-            if (fighterClass.Equals("mercenary", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = 9;
-                AT1 = 11;
-                PA1 = 7;
-                LP1 = 3;
+                case "gladiator":
+                    IN1 = 9;
+                    AT1 = 10;
+                    PA1 = 8;
+                    LP1 = 3;
+                    break;
+
+                case "warrior":
+                    IN1 = 9;
+                    AT1 = 8;
+                    PA1 = 10;
+                    LP1 = 3;
+                    break;
+
+                case "knight":
+                    IN1 = 9;
+                    AT1 = 7;
+                    PA1 = 11;
+                    LP1 = 3;
+                    break;
+
+                case "barbarian":
+                    IN1 = 7;
+                    AT1 = 12;
+                    PA1 = 7;
+                    LP1 = 3;
+                    break;
+
+                case "dwarf":
+                    IN1 = 7;
+                    AT1 = 8;
+                    PA1 = 11;
+                    LP1 = 3;
+                    break;
+
+                case "elf":
+                    IN1 = 11;
+                    AT1 = 9;
+                    PA1 = 8;
+                    LP1 = 3;
+                    break;
+
+                case "orc":
+                    IN1 = 7;
+                    AT1 = 10;
+                    PA1 = 9;
+                    LP1 = 3;
+                    break;
+
+                case "theif":
+                    IN1 = 11;
+                    AT1 = 8;
+                    PA1 = 9;
+                    LP1 = 3;
+                    break;
+
+                case "pirate":
+                    IN1 = 9;
+                    AT1 = 9;
+                    PA1 = 9;
+                    LP1 = 3;
+                    break;
+
+                case "mercenary":
+                    IN1 = 9;
+                    AT1 = 11;
+                    PA1 = 7;
+                    LP1 = 3;
+                    break;
             }
 
             //assign values based on weapon
-            if (weapon.Equals("spear", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = IN1 + 5;
-            }
-            if (weapon.Equals("sword & shield", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = IN1 - 2;
-                PA1 = PA1 + 2;
-            }
-            if (weapon.Equals("mace", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = IN1 - 1;
-                AT1 = AT1 + 2;
-            }
-            if (weapon.Equals("2-handed sword", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = IN1 + 2;
-                AT1 = AT1 + 2;
-                PA1 = PA1 - 1;
-            }
-            if (weapon.Equals("axe", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = IN1 - 1;
-                AT1 = AT1 + 1;
-                PA1 = PA1 - 2;
-            }
-            if (weapon.Equals("bow", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = IN1 + 5;
-                AT1 = AT1 + 2;
-                PA1 = PA1 - 2;
-            }
-            if (weapon.Equals("2-handed axe", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = IN1 + 2;
-                AT1 = AT1 + 3;
-                PA1 = PA1 - 2;
+            weapon = weapon.ToLowerInvariant();
 
-            }
-            if (weapon.Equals("saber", StringComparison.InvariantCultureIgnoreCase))
+            switch(weapon)
             {
-                IN1 = IN1 + 2;
-                PA1 = PA1 + 1;
-            }
-            if (weapon.Equals("orcblade", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = IN1 - 4;
-                AT1 = AT1 + 3;
-            }
-            if (weapon.Equals("daggers", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = IN1 - 3;
-                AT1 = AT1 - 1;
-                PA1 = PA1 + 2;
+                case "spear":
+                    IN1 = IN1 + 5;
+                    break;
+
+                case "sword & shield":
+                    IN1 = IN1 - 2;
+                    PA1 = PA1 + 2;
+                    break;
+
+                case "mace":
+                    IN1 = IN1 - 1;
+                    AT1 = AT1 + 2;
+                    break;
+
+                case "2-handed sword":
+                    IN1 = IN1 + 2;
+                    AT1 = AT1 + 2;
+                    PA1 = PA1 - 1;
+                    break;
+
+                case "axe":
+                    IN1 = IN1 - 1;
+                    AT1 = AT1 + 1;
+                    PA1 = PA1 - 2;
+                    break;
+
+                case "bow":
+                    IN1 = IN1 + 5;
+                    AT1 = AT1 + 2;
+                    PA1 = PA1 - 2;
+                    break;
+
+                case "2-handed axe":
+                    IN1 = IN1 + 2;
+                    AT1 = AT1 + 3;
+                    PA1 = PA1 - 2;
+                    break;
+
+                case "saber":
+                    IN1 = IN1 + 2;
+                    PA1 = PA1 + 1;
+                    break;
+
+                case "orcblade":
+                    IN1 = IN1 - 4;
+                    AT1 = AT1 + 3;
+                    break;
+
+                case "daggers":
+                    IN1 = IN1 - 3;
+                    AT1 = AT1 - 1;
+                    PA1 = PA1 + 2;
+                    break;
             }
 
             //return the assigned value of Initiative
-            int fighterIN = IN1;
-            return fighterIN;
+            return IN1;
         }
 
         //function to assign Attack value based on class and weapon
@@ -722,134 +728,141 @@ namespace ParenaFightSimulator
             int PA1 = 0;
             int LP1 = 3;
 
-            if (fighterClass.Equals("gladiator", StringComparison.InvariantCultureIgnoreCase))
+            fighterClass = fighterClass.ToLowerInvariant();
+
+            switch (fighterClass)
             {
-                IN1 = 9;
-                AT1 = 10;
-                PA1 = 8;
-                LP1 = 3;
-            }
-            if (fighterClass.Equals("warrior", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = 9;
-                AT1 = 8;
-                PA1 = 10;
-                LP1 = 3;
-            }
-            if (fighterClass.Equals("knight", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = 9;
-                AT1 = 7;
-                PA1 = 11;
-                LP1 = 3;
-            }
-            if (fighterClass.Equals("barbarian", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = 7;
-                AT1 = 12;
-                PA1 = 7;
-                LP1 = 3;
-            }
-            if (fighterClass.Equals("dwarf", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = 7;
-                AT1 = 8;
-                PA1 = 11;
-                LP1 = 3;
-            }
-            if (fighterClass.Equals("elf", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = 11;
-                AT1 = 9;
-                PA1 = 8;
-                LP1 = 3;
-            }
-            if (fighterClass.Equals("orc", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = 7;
-                AT1 = 10;
-                PA1 = 9;
-                LP1 = 3;
-            }
-            if (fighterClass.Equals("theif", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = 11;
-                AT1 = 8;
-                PA1 = 9;
-                LP1 = 3;
-            }
-            if (fighterClass.Equals("pirate", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = 9;
-                AT1 = 9;
-                PA1 = 9;
-                LP1 = 3;
-            }
-            if (fighterClass.Equals("mercenary", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = 9;
-                AT1 = 11;
-                PA1 = 7;
-                LP1 = 3;
+                case "gladiator":
+                    IN1 = 9;
+                    AT1 = 10;
+                    PA1 = 8;
+                    LP1 = 3;
+                    break;
+
+                case "warrior":
+                    IN1 = 9;
+                    AT1 = 8;
+                    PA1 = 10;
+                    LP1 = 3;
+                    break;
+
+                case "knight":
+                    IN1 = 9;
+                    AT1 = 7;
+                    PA1 = 11;
+                    LP1 = 3;
+                    break;
+
+                case "barbarian":
+                    IN1 = 7;
+                    AT1 = 12;
+                    PA1 = 7;
+                    LP1 = 3;
+                    break;
+
+                case "dwarf":
+                    IN1 = 7;
+                    AT1 = 8;
+                    PA1 = 11;
+                    LP1 = 3;
+                    break;
+
+                case "elf":
+                    IN1 = 11;
+                    AT1 = 9;
+                    PA1 = 8;
+                    LP1 = 3;
+                    break;
+
+                case "orc":
+                    IN1 = 7;
+                    AT1 = 10;
+                    PA1 = 9;
+                    LP1 = 3;
+                    break;
+
+                case "theif":
+                    IN1 = 11;
+                    AT1 = 8;
+                    PA1 = 9;
+                    LP1 = 3;
+                    break;
+
+                case "pirate":
+                    IN1 = 9;
+                    AT1 = 9;
+                    PA1 = 9;
+                    LP1 = 3;
+                    break;
+
+                case "mercenary":
+                    IN1 = 9;
+                    AT1 = 11;
+                    PA1 = 7;
+                    LP1 = 3;
+                    break;
             }
 
-            if (weapon.Equals("spear", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = IN1 + 5;
-            }
-            if (weapon.Equals("sword & shield", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = IN1 - 2;
-                PA1 = PA1 + 2;
-            }
-            if (weapon.Equals("mace", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = IN1 - 1;
-                AT1 = AT1 + 2;
-            }
-            if (weapon.Equals("2-handed sword", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = IN1 + 2;
-                AT1 = AT1 + 2;
-                PA1 = PA1 - 1;
-            }
-            if (weapon.Equals("axe", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = IN1 - 1;
-                AT1 = AT1 + 1;
-                PA1 = PA1 - 2;
-            }
-            if (weapon.Equals("bow", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = IN1 + 5;
-                AT1 = AT1 + 2;
-                PA1 = PA1 - 2;
-            }
-            if (weapon.Equals("2-handed axe", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = IN1 + 2;
-                AT1 = AT1 + 3;
-                PA1 = PA1 - 2;
+            weapon = weapon.ToLowerInvariant();
 
-            }
-            if (weapon.Equals("saber", StringComparison.InvariantCultureIgnoreCase))
+            switch(weapon)
             {
-                IN1 = IN1 + 2;
-                PA1 = PA1 + 1;
+                case "spear":
+                    IN1 = IN1 + 5;
+                    break;
+
+                case "sword & shield":
+                    IN1 = IN1 - 2;
+                    PA1 = PA1 + 2;
+                    break;
+
+                case "mace":
+                    IN1 = IN1 - 1;
+                    AT1 = AT1 + 2;
+                    break;
+
+                case "2-handed sword":
+                    IN1 = IN1 + 2;
+                    AT1 = AT1 + 2;
+                    PA1 = PA1 - 1;
+                    break;
+
+                case "axe":
+                    IN1 = IN1 - 1;
+                    AT1 = AT1 + 1;
+                    PA1 = PA1 - 2;
+                    break;
+
+                case "bow":
+                    IN1 = IN1 + 5;
+                    AT1 = AT1 + 2;
+                    PA1 = PA1 - 2;
+                    break;
+
+                case "2-handed axe":
+                    IN1 = IN1 + 2;
+                    AT1 = AT1 + 3;
+                    PA1 = PA1 - 2;
+                    break;
+
+                case "saber":
+                    IN1 = IN1 + 2;
+                    PA1 = PA1 + 1;
+                    break;
+
+                case "orcblade":
+                    IN1 = IN1 - 4;
+                    AT1 = AT1 + 3;
+                    break;
+
+                case "daggers":
+                    IN1 = IN1 - 3;
+                    AT1 = AT1 - 1;
+                    PA1 = PA1 + 2;
+                    break;
             }
-            if (weapon.Equals("orcblade", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = IN1 - 4;
-                AT1 = AT1 + 3;
-            }
-            if (weapon.Equals("daggers", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = IN1 - 3;
-                AT1 = AT1 - 1;
-                PA1 = PA1 + 2;
-            }
-            int fighterAT = AT1;
-            return fighterAT;
+            
+            return AT1;
         }
 
         //function to assign Parry value based on class and weapon
@@ -860,134 +873,140 @@ namespace ParenaFightSimulator
             int PA1 = 0;
             int LP1 = 3;
 
-            if (fighterClass.Equals("gladiator", StringComparison.InvariantCultureIgnoreCase))
+            fighterClass = fighterClass.ToLowerInvariant();
+
+            switch(fighterClass)
             {
-                IN1 = 9;
-                AT1 = 10;
-                PA1 = 8;
-                LP1 = 3;
-            }
-            if (fighterClass.Equals("warrior", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = 9;
-                AT1 = 8;
-                PA1 = 10;
-                LP1 = 3;
-            }
-            if (fighterClass.Equals("knight", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = 9;
-                AT1 = 7;
-                PA1 = 11;
-                LP1 = 3;
-            }
-            if (fighterClass.Equals("barbarian", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = 7;
-                AT1 = 12;
-                PA1 = 7;
-                LP1 = 3;
-            }
-            if (fighterClass.Equals("dwarf", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = 7;
-                AT1 = 8;
-                PA1 = 11;
-                LP1 = 3;
-            }
-            if (fighterClass.Equals("elf", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = 11;
-                AT1 = 9;
-                PA1 = 8;
-                LP1 = 3;
-            }
-            if (fighterClass.Equals("orc", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = 7;
-                AT1 = 10;
-                PA1 = 9;
-                LP1 = 3;
-            }
-            if (fighterClass.Equals("theif", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = 11;
-                AT1 = 8;
-                PA1 = 9;
-                LP1 = 3;
-            }
-            if (fighterClass.Equals("pirate", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = 9;
-                AT1 = 9;
-                PA1 = 9;
-                LP1 = 3;
-            }
-            if (fighterClass.Equals("mercenary", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = 9;
-                AT1 = 11;
-                PA1 = 7;
-                LP1 = 3;
+                case "gladiator":
+                    IN1 = 9;
+                    AT1 = 10;
+                    PA1 = 8;
+                    LP1 = 3;
+                    break;
+
+                case "warrior":
+                    IN1 = 9;
+                    AT1 = 8;
+                    PA1 = 10;
+                    LP1 = 3;
+                    break;
+
+                case "knight":
+                    IN1 = 9;
+                    AT1 = 7;
+                    PA1 = 11;
+                    LP1 = 3;
+                    break;
+
+                case "barbarian":
+                    IN1 = 7;
+                    AT1 = 12;
+                    PA1 = 7;
+                    LP1 = 3;
+                    break;
+
+                case "dwarf":
+                    IN1 = 7;
+                    AT1 = 8;
+                    PA1 = 11;
+                    LP1 = 3;
+                    break;
+
+                case "elf":
+                    IN1 = 11;
+                    AT1 = 9;
+                    PA1 = 8;
+                    LP1 = 3;
+                    break;
+
+                case "orc":
+                    IN1 = 7;
+                    AT1 = 10;
+                    PA1 = 9;
+                    LP1 = 3;
+                    break;
+
+                case "theif":
+                    IN1 = 11;
+                    AT1 = 8;
+                    PA1 = 9;
+                    LP1 = 3;
+                    break;
+
+                case "pirate":
+                    IN1 = 9;
+                    AT1 = 9;
+                    PA1 = 9;
+                    LP1 = 3;
+                    break;
+
+                case "mercenary":
+                    IN1 = 9;
+                    AT1 = 11;
+                    PA1 = 7;
+                    LP1 = 3;
+                    break;
             }
 
-            if (weapon.Equals("spear", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = IN1 + 5;
-            }
-            if (weapon.Equals("sword & shield", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = IN1 - 2;
-                PA1 = PA1 + 2;
-            }
-            if (weapon.Equals("mace", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = IN1 - 1;
-                AT1 = AT1 + 2;
-            }
-            if (weapon.Equals("2-handed sword", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = IN1 + 2;
-                AT1 = AT1 + 2;
-                PA1 = PA1 - 1;
-            }
-            if (weapon.Equals("axe", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = IN1 - 1;
-                AT1 = AT1 + 1;
-                PA1 = PA1 - 2;
-            }
-            if (weapon.Equals("bow", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = IN1 + 5;
-                AT1 = AT1 + 2;
-                PA1 = PA1 - 2;
-            }
-            if (weapon.Equals("2-handed axe", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = IN1 + 2;
-                AT1 = AT1 + 3;
-                PA1 = PA1 - 2;
+            weapon = weapon.ToLowerInvariant();
 
-            }
-            if (weapon.Equals("saber", StringComparison.InvariantCultureIgnoreCase))
+            switch (weapon)
             {
-                IN1 = IN1 + 2;
-                PA1 = PA1 + 1;
+                case "spear":
+                    IN1 = IN1 + 5;
+                    break;
+
+                case "sword & shield":
+                    IN1 = IN1 - 2;
+                    PA1 = PA1 + 2;
+                    break;
+
+                case "mace":
+                    IN1 = IN1 - 1;
+                    AT1 = AT1 + 2;
+                    break;
+
+                case "2-handed sword":
+                    IN1 = IN1 + 2;
+                    AT1 = AT1 + 2;
+                    PA1 = PA1 - 1;
+                    break;
+
+                case "axe":
+                    IN1 = IN1 - 1;
+                    AT1 = AT1 + 1;
+                    PA1 = PA1 - 2;
+                    break;
+
+                case "bow":
+                    IN1 = IN1 + 5;
+                    AT1 = AT1 + 2;
+                    PA1 = PA1 - 2;
+                    break;
+
+                case "2-handed axe":
+                    IN1 = IN1 + 2;
+                    AT1 = AT1 + 3;
+                    PA1 = PA1 - 2;
+                    break;
+
+                case "saber":
+                    IN1 = IN1 + 2;
+                    PA1 = PA1 + 1;
+                    break;
+
+                case "orcblade":
+                    IN1 = IN1 - 4;
+                    AT1 = AT1 + 3;
+                    break;
+
+                case "daggers":
+                    IN1 = IN1 - 3;
+                    AT1 = AT1 - 1;
+                    PA1 = PA1 + 2;
+                    break;
             }
-            if (weapon.Equals("orcblade", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = IN1 - 4;
-                AT1 = AT1 + 3;
-            }
-            if (weapon.Equals("daggers", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = IN1 - 3;
-                AT1 = AT1 - 1;
-                PA1 = PA1 + 2;
-            }
-            int fighterPA = PA1;
-            return fighterPA;
+            return PA1;
         }
 
         //function to assign Lifepoints value based on class and weapon
@@ -998,134 +1017,140 @@ namespace ParenaFightSimulator
             int PA1 = 0;
             int LP1 = 3;
 
-            if (fighterClass.Equals("gladiator", StringComparison.InvariantCultureIgnoreCase))
+            fighterClass = fighterClass.ToLowerInvariant();
+
+            switch (fighterClass)
             {
-                IN1 = 9;
-                AT1 = 10;
-                PA1 = 8;
-                LP1 = 3;
-            }
-            if (fighterClass.Equals("warrior", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = 9;
-                AT1 = 8;
-                PA1 = 10;
-                LP1 = 3;
-            }
-            if (fighterClass.Equals("knight", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = 9;
-                AT1 = 7;
-                PA1 = 11;
-                LP1 = 3;
-            }
-            if (fighterClass.Equals("barbarian", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = 7;
-                AT1 = 12;
-                PA1 = 7;
-                LP1 = 3;
-            }
-            if (fighterClass.Equals("dwarf", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = 7;
-                AT1 = 8;
-                PA1 = 11;
-                LP1 = 3;
-            }
-            if (fighterClass.Equals("elf", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = 11;
-                AT1 = 9;
-                PA1 = 8;
-                LP1 = 3;
-            }
-            if (fighterClass.Equals("orc", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = 7;
-                AT1 = 10;
-                PA1 = 9;
-                LP1 = 3;
-            }
-            if (fighterClass.Equals("theif", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = 11;
-                AT1 = 8;
-                PA1 = 9;
-                LP1 = 3;
-            }
-            if (fighterClass.Equals("pirate", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = 9;
-                AT1 = 9;
-                PA1 = 9;
-                LP1 = 3;
-            }
-            if (fighterClass.Equals("mercenary", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = 9;
-                AT1 = 11;
-                PA1 = 7;
-                LP1 = 3;
+                case "gladiator":
+                    IN1 = 9;
+                    AT1 = 10;
+                    PA1 = 8;
+                    LP1 = 3;
+                    break;
+
+                case "warrior":
+                    IN1 = 9;
+                    AT1 = 8;
+                    PA1 = 10;
+                    LP1 = 3;
+                    break;
+
+                case "knight":
+                    IN1 = 9;
+                    AT1 = 7;
+                    PA1 = 11;
+                    LP1 = 3;
+                    break;
+
+                case "barbarian":
+                    IN1 = 7;
+                    AT1 = 12;
+                    PA1 = 7;
+                    LP1 = 3;
+                    break;
+
+                case "dwarf":
+                    IN1 = 7;
+                    AT1 = 8;
+                    PA1 = 11;
+                    LP1 = 3;
+                    break;
+
+                case "elf":
+                    IN1 = 11;
+                    AT1 = 9;
+                    PA1 = 8;
+                    LP1 = 3;
+                    break;
+
+                case "orc":
+                    IN1 = 7;
+                    AT1 = 10;
+                    PA1 = 9;
+                    LP1 = 3;
+                    break;
+
+                case "theif":
+                    IN1 = 11;
+                    AT1 = 8;
+                    PA1 = 9;
+                    LP1 = 3;
+                    break;
+
+                case "pirate":
+                    IN1 = 9;
+                    AT1 = 9;
+                    PA1 = 9;
+                    LP1 = 3;
+                    break;
+
+                case "mercenary":
+                    IN1 = 9;
+                    AT1 = 11;
+                    PA1 = 7;
+                    LP1 = 3;
+                    break;
             }
 
-            if (weapon.Equals("spear", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = IN1 + 5;
-            }
-            if (weapon.Equals("sword & shield", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = IN1 - 2;
-                PA1 = PA1 + 2;
-            }
-            if (weapon.Equals("mace", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = IN1 - 1;
-                AT1 = AT1 + 2;
-            }
-            if (weapon.Equals("2-handed sword", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = IN1 + 2;
-                AT1 = AT1 + 2;
-                PA1 = PA1 - 1;
-            }
-            if (weapon.Equals("axe", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = IN1 - 1;
-                AT1 = AT1 + 1;
-                PA1 = PA1 - 2;
-            }
-            if (weapon.Equals("bow", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = IN1 + 5;
-                AT1 = AT1 + 2;
-                PA1 = PA1 - 2;
-            }
-            if (weapon.Equals("2-handed axe", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = IN1 + 2;
-                AT1 = AT1 + 3;
-                PA1 = PA1 - 2;
+            weapon = weapon.ToLowerInvariant();
 
-            }
-            if (weapon.Equals("saber", StringComparison.InvariantCultureIgnoreCase))
+            switch(weapon)
             {
-                IN1 = IN1 + 2;
-                PA1 = PA1 + 1;
+                case "spear":
+                    IN1 = IN1 + 5;
+                    break;
+
+                case "sword & shield":
+                    IN1 = IN1 - 2;
+                    PA1 = PA1 + 2;
+                    break;
+
+                case "mace":
+                    IN1 = IN1 - 1;
+                    AT1 = AT1 + 2;
+                    break;
+
+                case "2-handed sword":
+                    IN1 = IN1 + 2;
+                    AT1 = AT1 + 2;
+                    PA1 = PA1 - 1;
+                    break;
+
+                case "axe":
+                    IN1 = IN1 - 1;
+                    AT1 = AT1 + 1;
+                    PA1 = PA1 - 2;
+                    break;
+
+                case "bow":
+                    IN1 = IN1 + 5;
+                    AT1 = AT1 + 2;
+                    PA1 = PA1 - 2;
+                    break;
+
+                case "2-handed axe":
+                    IN1 = IN1 + 2;
+                    AT1 = AT1 + 3;
+                    PA1 = PA1 - 2;
+                    break;
+
+                case "saber":
+                    IN1 = IN1 + 2;
+                    PA1 = PA1 + 1;
+                    break;
+
+                case "orcblade":
+                    IN1 = IN1 - 4;
+                    AT1 = AT1 + 3;
+                    break;
+
+                case "daggers":
+                    IN1 = IN1 - 3;
+                    AT1 = AT1 - 1;
+                    PA1 = PA1 + 2;
+                    break;
             }
-            if (weapon.Equals("orcblade", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = IN1 - 4;
-                AT1 = AT1 + 3;
-            }
-            if (weapon.Equals("daggers", StringComparison.InvariantCultureIgnoreCase))
-            {
-                IN1 = IN1 - 3;
-                AT1 = AT1 - 1;
-                PA1 = PA1 + 2;
-            }
-            int fighterLP = LP1;
-            return fighterLP;
+            return LP1;
         }
     }
 }
