@@ -575,7 +575,7 @@ namespace ParenaFightSimulator
         //function to assign Initiative value based on class and weapon
         static int FighterIN(string fighterClass, string weapon)
         {
-            int IN1 = 0;
+            int fighterIN = 0;
 
             fighterClass = fighterClass.ToLowerInvariant();
 
@@ -583,43 +583,43 @@ namespace ParenaFightSimulator
             switch(fighterClass)
             {
                 case "gladiator":
-                    IN1 = 9;
+                    fighterIN = 9;
                     break;
 
                 case "warrior":
-                    IN1 = 9;
+                    fighterIN = 9;
                     break;
 
                 case "knight":
-                    IN1 = 9;
+                    fighterIN = 9;
                     break;
 
                 case "barbarian":
-                    IN1 = 7;
+                    fighterIN = 7;
                     break;
 
                 case "dwarf":
-                    IN1 = 7;
+                    fighterIN = 7;
                     break;
 
                 case "elf":
-                    IN1 = 11;
+                    fighterIN = 11;
                     break;
 
                 case "orc":
-                    IN1 = 7;
+                    fighterIN = 7;
                     break;
 
                 case "theif":
-                    IN1 = 11;
+                    fighterIN = 11;
                     break;
 
                 case "pirate":
-                    IN1 = 9;
+                    fighterIN = 9;
                     break;
 
                 case "mercenary":
-                    IN1 = 9;
+                    fighterIN = 9;
                     break;
             }
 
@@ -629,97 +629,97 @@ namespace ParenaFightSimulator
             switch(weapon)
             {
                 case "spear":
-                    IN1 += 5;
+                    fighterIN += 5;
                     break;
 
                 case "sword & shield":
-                    IN1 -= 2;
+                    fighterIN -= 2;
                     break;
 
                 case "mace":
-                    IN1 -= 1;
+                    fighterIN -= 1;
                     break;
 
                 case "2-handed sword":
-                    IN1 += 2;
+                    fighterIN += 2;
                     break;
 
                 case "axe":
-                    IN1 -= 1;
+                    fighterIN -= 1;
                     break;
 
                 case "bow":
-                    IN1 += 5;
+                    fighterIN += 5;
                     break;
 
                 case "2-handed axe":
-                    IN1 += 2;
+                    fighterIN += 2;
                     break;
 
                 case "saber":
-                    IN1 += 2;
+                    fighterIN += 2;
                     break;
 
                 case "orcblade":
-                    IN1 -= 4;
+                    fighterIN -= 4;
                     break;
 
                 case "daggers":
-                    IN1 -= 3;
+                    fighterIN -= 3;
                     break;
             }
 
             //return the assigned value of Initiative
-            return IN1;
+            return fighterIN;
         }
 
         //function to assign Attack value based on class and weapon
         static int FighterAT(string fighterClass, string weapon)
         {
-            int AT1 = 0;
+            int fighterAT = 0;
 
             fighterClass = fighterClass.ToLowerInvariant();
 
             switch (fighterClass)
             {
                 case "gladiator":
-                    AT1 = 10;
+                    fighterAT = 10;
                     break;
 
                 case "warrior":
-                    AT1 = 8;
+                    fighterAT = 8;
                     break;
 
                 case "knight":
-                    AT1 = 7;
+                    fighterAT = 7;
                     break;
 
                 case "barbarian":
-                    AT1 = 12;
+                    fighterAT = 12;
                     break;
 
                 case "dwarf":
-                    AT1 = 8;
+                    fighterAT = 8;
                     break;
 
                 case "elf":
-                    AT1 = 9;
+                    fighterAT = 9;
                     break;
 
                 case "orc":
-                    AT1 = 10;
+                    fighterAT = 10;
                     break;
 
                 case "theif":
-                    AT1 = 8;
+                    fighterAT = 8;
                     break;
 
                 case "pirate":
-                    AT1 = 9;
+                    fighterAT = 9;
                     break;
 
                 case "mercenary":
-                    AT1 = 11;
+                    fighterAT = 11;
                     break;
             }
 
@@ -729,84 +729,84 @@ namespace ParenaFightSimulator
             {
 
                 case "mace":
-                    AT1 += 2;
+                    fighterAT += 2;
                     break;
 
                 case "2-handed sword":
-                    AT1 += 2;
+                    fighterAT += 2;
                     break;
 
                 case "axe":
-                    AT1 += 1;
+                    fighterAT += 1;
                     break;
 
                 case "bow":
-                    AT1 += 2;
+                    fighterAT += 2;
                     break;
 
                 case "2-handed axe":
-                    AT1 += 3;
+                    fighterAT += 3;
                     break;
 
                 case "orcblade":
-                    AT1 += 3;
+                    fighterAT += 3;
                     break;
 
                 case "daggers":
-                    AT1 -= 1;
+                    fighterAT -= 1;
                     break;
             }
             
-            return AT1;
+            return fighterAT;
         }
 
         //function to assign Parry value based on class and weapon
         static int FighterPA(string fighterClass, string weapon)
         {
-            int PA1 = 0;
+            int fighterPA = 0;
 
             fighterClass = fighterClass.ToLowerInvariant();
 
             switch(fighterClass)
             {
                 case "gladiator":
-                    PA1 = 8;
+                    fighterPA = 8;
                     break;
 
                 case "warrior":
-                    PA1 = 10;
+                    fighterPA = 10;
                     break;
 
                 case "knight":
-                    PA1 = 11;
+                    fighterPA = 11;
                     break;
 
                 case "barbarian":
-                    PA1 = 7;
+                    fighterPA = 7;
                     break;
 
                 case "dwarf":
-                    PA1 = 11;
+                    fighterPA = 11;
                     break;
 
                 case "elf":
-                    PA1 = 8;
+                    fighterPA = 8;
                     break;
 
                 case "orc":
-                    PA1 = 9;
+                    fighterPA = 9;
                     break;
 
                 case "theif":
-                    PA1 = 9;
+                    fighterPA = 9;
                     break;
 
                 case "pirate":
-                    PA1 = 9;
+                    fighterPA = 9;
                     break;
 
                 case "mercenary":
-                    PA1 = 7;
+                    fighterPA = 7;
                     break;
             }
 
@@ -816,87 +816,87 @@ namespace ParenaFightSimulator
             {
 
                 case "sword & shield":
-                    PA1 += 2;
+                    fighterPA += 2;
                     break;
 
                 case "2-handed sword":
-                    PA1 -= 1;
+                    fighterPA -= 1;
                     break;
 
                 case "axe":
-                    PA1 -= 2;
+                    fighterPA -= 2;
                     break;
 
                 case "bow":
-                    PA1 -= 2;
+                    fighterPA -= 2;
                     break;
 
                 case "2-handed axe":
-                    PA1 -= 2;
+                    fighterPA -= 2;
                     break;
 
                 case "saber":
-                    PA1 += 1;
+                    fighterPA += 1;
                     break;
 
                 case "daggers":
-                    PA1 += 2;
+                    fighterPA += 2;
                     break;
             }
-            return PA1;
+            return fighterPA;
         }
 
         //function to assign Lifepoints value based on class and weapon
         static int FighterLP(string fighterClass, string weapon)
         {
-            int LP1 = 3;
+            int fighterLP = 3;
 
             fighterClass = fighterClass.ToLowerInvariant();
 
             switch (fighterClass)
             {
                 case "gladiator":
-                    LP1 = 3;
+                    fighterLP = 3;
                     break;
 
                 case "warrior":
-                    LP1 = 3;
+                    fighterLP = 3;
                     break;
 
                 case "knight":
-                    LP1 = 3;
+                    fighterLP = 3;
                     break;
 
                 case "barbarian":
-                    LP1 = 3;
+                    fighterLP = 3;
                     break;
 
                 case "dwarf":
-                    LP1 = 3;
+                    fighterLP = 3;
                     break;
 
                 case "elf":
-                    LP1 = 3;
+                    fighterLP = 3;
                     break;
 
                 case "orc":
-                    LP1 = 3;
+                    fighterLP = 3;
                     break;
 
                 case "theif":
-                    LP1 = 3;
+                    fighterLP = 3;
                     break;
 
                 case "pirate":
-                    LP1 = 3;
+                    fighterLP = 3;
                     break;
 
                 case "mercenary":
-                    LP1 = 3;
+                    fighterLP = 3;
                     break;
             }
 
-            return LP1;
+            return fighterLP;
         }
     }
 }
