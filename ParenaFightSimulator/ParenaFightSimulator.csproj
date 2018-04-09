@@ -7,8 +7,8 @@
     <ProjectGuid>{E4640A40-BB9A-43B3-8C33-69A546C99983}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ConsoleApplication2</RootNamespace>
-    <AssemblyName>ConsoleApplication2</AssemblyName>
+    <RootNamespace>ParenaFightSimulator</RootNamespace>
+    <AssemblyName>ParenaFightSimulator</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
