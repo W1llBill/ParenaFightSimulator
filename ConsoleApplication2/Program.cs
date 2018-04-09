@@ -576,9 +576,6 @@ namespace ParenaFightSimulator
         static int FighterIN(string fighterClass, string weapon)
         {
             int IN1 = 0;
-            int AT1 = 0;
-            int PA1 = 0;
-            int LP1 = 3;
 
             fighterClass = fighterClass.ToLowerInvariant();
 
@@ -587,72 +584,42 @@ namespace ParenaFightSimulator
             {
                 case "gladiator":
                     IN1 = 9;
-                    AT1 = 10;
-                    PA1 = 8;
-                    LP1 = 3;
                     break;
 
                 case "warrior":
                     IN1 = 9;
-                    AT1 = 8;
-                    PA1 = 10;
-                    LP1 = 3;
                     break;
 
                 case "knight":
                     IN1 = 9;
-                    AT1 = 7;
-                    PA1 = 11;
-                    LP1 = 3;
                     break;
 
                 case "barbarian":
                     IN1 = 7;
-                    AT1 = 12;
-                    PA1 = 7;
-                    LP1 = 3;
                     break;
 
                 case "dwarf":
                     IN1 = 7;
-                    AT1 = 8;
-                    PA1 = 11;
-                    LP1 = 3;
                     break;
 
                 case "elf":
                     IN1 = 11;
-                    AT1 = 9;
-                    PA1 = 8;
-                    LP1 = 3;
                     break;
 
                 case "orc":
                     IN1 = 7;
-                    AT1 = 10;
-                    PA1 = 9;
-                    LP1 = 3;
                     break;
 
                 case "theif":
                     IN1 = 11;
-                    AT1 = 8;
-                    PA1 = 9;
-                    LP1 = 3;
                     break;
 
                 case "pirate":
                     IN1 = 9;
-                    AT1 = 9;
-                    PA1 = 9;
-                    LP1 = 3;
                     break;
 
                 case "mercenary":
                     IN1 = 9;
-                    AT1 = 11;
-                    PA1 = 7;
-                    LP1 = 3;
                     break;
             }
 
@@ -667,52 +634,38 @@ namespace ParenaFightSimulator
 
                 case "sword & shield":
                     IN1 -= 2;
-                    PA1 += 2;
                     break;
 
                 case "mace":
                     IN1 -= 1;
-                    AT1 += 2;
                     break;
 
                 case "2-handed sword":
                     IN1 += 2;
-                    AT1 += 2;
-                    PA1 -= 1;
                     break;
 
                 case "axe":
                     IN1 -= 1;
-                    AT1 += 1;
-                    PA1 -= 2;
                     break;
 
                 case "bow":
                     IN1 += 5;
-                    AT1 += 2;
-                    PA1 -= 2;
                     break;
 
                 case "2-handed axe":
                     IN1 += 2;
-                    AT1 += 3;
-                    PA1 -= 2;
                     break;
 
                 case "saber":
                     IN1 += 2;
-                    PA1 += 1;
                     break;
 
                 case "orcblade":
-                    IN1 -=4;
-                    AT1 += 3;
+                    IN1 -= 4;
                     break;
 
                 case "daggers":
                     IN1 -= 3;
-                    AT1 -= 1;
-                    PA1 += 2;
                     break;
             }
 
@@ -723,83 +676,50 @@ namespace ParenaFightSimulator
         //function to assign Attack value based on class and weapon
         static int FighterAT(string fighterClass, string weapon)
         {
-            int IN1 = 0;
             int AT1 = 0;
-            int PA1 = 0;
-            int LP1 = 3;
 
             fighterClass = fighterClass.ToLowerInvariant();
 
             switch (fighterClass)
             {
                 case "gladiator":
-                    IN1 = 9;
                     AT1 = 10;
-                    PA1 = 8;
-                    LP1 = 3;
                     break;
 
                 case "warrior":
-                    IN1 = 9;
                     AT1 = 8;
-                    PA1 = 10;
-                    LP1 = 3;
                     break;
 
                 case "knight":
-                    IN1 = 9;
                     AT1 = 7;
-                    PA1 = 11;
-                    LP1 = 3;
                     break;
 
                 case "barbarian":
-                    IN1 = 7;
                     AT1 = 12;
-                    PA1 = 7;
-                    LP1 = 3;
                     break;
 
                 case "dwarf":
-                    IN1 = 7;
                     AT1 = 8;
-                    PA1 = 11;
-                    LP1 = 3;
                     break;
 
                 case "elf":
-                    IN1 = 11;
                     AT1 = 9;
-                    PA1 = 8;
-                    LP1 = 3;
                     break;
 
                 case "orc":
-                    IN1 = 7;
                     AT1 = 10;
-                    PA1 = 9;
-                    LP1 = 3;
                     break;
 
                 case "theif":
-                    IN1 = 11;
                     AT1 = 8;
-                    PA1 = 9;
-                    LP1 = 3;
                     break;
 
                 case "pirate":
-                    IN1 = 9;
                     AT1 = 9;
-                    PA1 = 9;
-                    LP1 = 3;
                     break;
 
                 case "mercenary":
-                    IN1 = 9;
                     AT1 = 11;
-                    PA1 = 7;
-                    LP1 = 3;
                     break;
             }
 
@@ -807,58 +727,33 @@ namespace ParenaFightSimulator
 
             switch(weapon)
             {
-                case "spear":
-                    IN1 += 5;
-                    break;
-
-                case "sword & shield":
-                    IN1 -= 2;
-                    PA1 += 2;
-                    break;
 
                 case "mace":
-                    IN1 -= 1;
                     AT1 += 2;
                     break;
 
                 case "2-handed sword":
-                    IN1 += 2;
                     AT1 += 2;
-                    PA1 -= 1;
                     break;
 
                 case "axe":
-                    IN1 -= 1;
                     AT1 += 1;
-                    PA1 -= 2;
                     break;
 
                 case "bow":
-                    IN1 += 5;
                     AT1 += 2;
-                    PA1 -= 2;
                     break;
 
                 case "2-handed axe":
-                    IN1 += 2;
                     AT1 += 3;
-                    PA1 -= 2;
-                    break;
-
-                case "saber":
-                    IN1 += 2;
-                    PA1 += 1;
                     break;
 
                 case "orcblade":
-                    IN1 -= 4;
                     AT1 += 3;
                     break;
 
                 case "daggers":
-                    IN1 -= 3;
                     AT1 -= 1;
-                    PA1 += 2;
                     break;
             }
             
@@ -868,83 +763,50 @@ namespace ParenaFightSimulator
         //function to assign Parry value based on class and weapon
         static int FighterPA(string fighterClass, string weapon)
         {
-            int IN1 = 0;
-            int AT1 = 0;
             int PA1 = 0;
-            int LP1 = 3;
 
             fighterClass = fighterClass.ToLowerInvariant();
 
             switch(fighterClass)
             {
                 case "gladiator":
-                    IN1 = 9;
-                    AT1 = 10;
                     PA1 = 8;
-                    LP1 = 3;
                     break;
 
                 case "warrior":
-                    IN1 = 9;
-                    AT1 = 8;
                     PA1 = 10;
-                    LP1 = 3;
                     break;
 
                 case "knight":
-                    IN1 = 9;
-                    AT1 = 7;
                     PA1 = 11;
-                    LP1 = 3;
                     break;
 
                 case "barbarian":
-                    IN1 = 7;
-                    AT1 = 12;
                     PA1 = 7;
-                    LP1 = 3;
                     break;
 
                 case "dwarf":
-                    IN1 = 7;
-                    AT1 = 8;
                     PA1 = 11;
-                    LP1 = 3;
                     break;
 
                 case "elf":
-                    IN1 = 11;
-                    AT1 = 9;
                     PA1 = 8;
-                    LP1 = 3;
                     break;
 
                 case "orc":
-                    IN1 = 7;
-                    AT1 = 10;
                     PA1 = 9;
-                    LP1 = 3;
                     break;
 
                 case "theif":
-                    IN1 = 11;
-                    AT1 = 8;
                     PA1 = 9;
-                    LP1 = 3;
                     break;
 
                 case "pirate":
-                    IN1 = 9;
-                    AT1 = 9;
                     PA1 = 9;
-                    LP1 = 3;
                     break;
 
                 case "mercenary":
-                    IN1 = 9;
-                    AT1 = 11;
                     PA1 = 7;
-                    LP1 = 3;
                     break;
             }
 
@@ -952,57 +814,32 @@ namespace ParenaFightSimulator
 
             switch (weapon)
             {
-                case "spear":
-                    IN1 += 5;
-                    break;
 
                 case "sword & shield":
-                    IN1 -= 2;
                     PA1 += 2;
                     break;
 
-                case "mace":
-                    IN1 -= 1;
-                    AT1 += 2;
-                    break;
-
                 case "2-handed sword":
-                    IN1 += 2;
-                    AT1 += 2;
                     PA1 -= 1;
                     break;
 
                 case "axe":
-                    IN1 -= 1;
-                    AT1 += 1;
                     PA1 -= 2;
                     break;
 
                 case "bow":
-                    IN1 += 5;
-                    AT1 += 2;
                     PA1 -= 2;
                     break;
 
                 case "2-handed axe":
-                    IN1 += 2;
-                    AT1 += 3;
                     PA1 -= 2;
                     break;
 
                 case "saber":
-                    IN1 += 2;
                     PA1 += 1;
                     break;
 
-                case "orcblade":
-                    IN1 -= 4;
-                    AT1 += 3;
-                    break;
-
                 case "daggers":
-                    IN1 -= 3;
-                    AT1 -= 1;
                     PA1 += 2;
                     break;
             }
@@ -1012,9 +849,6 @@ namespace ParenaFightSimulator
         //function to assign Lifepoints value based on class and weapon
         static int FighterLP(string fighterClass, string weapon)
         {
-            int IN1 = 0;
-            int AT1 = 0;
-            int PA1 = 0;
             int LP1 = 3;
 
             fighterClass = fighterClass.ToLowerInvariant();
@@ -1022,134 +856,46 @@ namespace ParenaFightSimulator
             switch (fighterClass)
             {
                 case "gladiator":
-                    IN1 = 9;
-                    AT1 = 10;
-                    PA1 = 8;
                     LP1 = 3;
                     break;
 
                 case "warrior":
-                    IN1 = 9;
-                    AT1 = 8;
-                    PA1 = 10;
                     LP1 = 3;
                     break;
 
                 case "knight":
-                    IN1 = 9;
-                    AT1 = 7;
-                    PA1 = 11;
                     LP1 = 3;
                     break;
 
                 case "barbarian":
-                    IN1 = 7;
-                    AT1 = 12;
-                    PA1 = 7;
                     LP1 = 3;
                     break;
 
                 case "dwarf":
-                    IN1 = 7;
-                    AT1 = 8;
-                    PA1 = 11;
                     LP1 = 3;
                     break;
 
                 case "elf":
-                    IN1 = 11;
-                    AT1 = 9;
-                    PA1 = 8;
                     LP1 = 3;
                     break;
 
                 case "orc":
-                    IN1 = 7;
-                    AT1 = 10;
-                    PA1 = 9;
                     LP1 = 3;
                     break;
 
                 case "theif":
-                    IN1 = 11;
-                    AT1 = 8;
-                    PA1 = 9;
                     LP1 = 3;
                     break;
 
                 case "pirate":
-                    IN1 = 9;
-                    AT1 = 9;
-                    PA1 = 9;
                     LP1 = 3;
                     break;
 
                 case "mercenary":
-                    IN1 = 9;
-                    AT1 = 11;
-                    PA1 = 7;
                     LP1 = 3;
                     break;
             }
 
-            weapon = weapon.ToLowerInvariant();
-
-            switch(weapon)
-            {
-                case "spear":
-                    IN1 += 5;
-                    break;
-
-                case "sword & shield":
-                    IN1 -= 2;
-                    PA1 += 2;
-                    break;
-
-                case "mace":
-                    IN1 -= 1;
-                    AT1 += 2;
-                    break;
-
-                case "2-handed sword":
-                    IN1 += 2;
-                    AT1 += 2;
-                    PA1 -= 1;
-                    break;
-
-                case "axe":
-                    IN1 -= 1;
-                    AT1 += 1;
-                    PA1 -= 2;
-                    break;
-
-                case "bow":
-                    IN1 += 5;
-                    AT1 += 2;
-                    PA1 -= 2;
-                    break;
-
-                case "2-handed axe":
-                    IN1 += 2;
-                    AT1 += 3;
-                    PA1 -= 2;
-                    break;
-
-                case "saber":
-                    IN1 += 2;
-                    PA1 += 1;
-                    break;
-
-                case "orcblade":
-                    IN1 -= 4;
-                    AT1 += 3;
-                    break;
-
-                case "daggers":
-                    IN1 -= 3;
-                    AT1 -= 1;
-                    PA1 += 2;
-                    break;
-            }
             return LP1;
         }
     }
