@@ -8,16 +8,14 @@ namespace ParenaFightSimulator
 {
     class Program
     {
-        public static string class1 = "static";
-        public static string class2 = "static";
-        public static string weapon1 = "static";
-        public static string weapon2 = "static";
-
-
-
         static void Main(string[] args)
         {
-        start:
+            string class1 = "";
+            string class2 = "";
+            string weapon1 = "";
+            string weapon2 = "";
+
+            start:
 
             //intro
             Console.WriteLine("");
@@ -92,7 +90,7 @@ namespace ParenaFightSimulator
                 }
 
                 //call AvgFight to fight chosen fighter against all other types of fighters
-                AvgFight(avgclass, avgweapon, avgfightnum);
+                AvgFight(avgclass, avgweapon, avgfightnum, weapon1, weapon2);
 
                 //ask if the user wants to input another class, or quit
                 Console.WriteLine("Press R to restart, or any other key to quit");
@@ -111,13 +109,13 @@ namespace ParenaFightSimulator
 
             //ask for the user's chosen class and weapon for both fighters
             Console.WriteLine("Please input the first fighter's class:");
-            string class1 = Console.ReadLine();
+            class1 = Console.ReadLine();
             Console.WriteLine("Please input the first fighter's weapon;");
-            string weapon1 = Console.ReadLine();
+            weapon1 = Console.ReadLine();
             Console.WriteLine("Please input the second fighter's class:");
-            string class2 = Console.ReadLine();
+            class2 = Console.ReadLine();
             Console.WriteLine("Please input the second fighter's weapon;");
-            string weapon2 = Console.ReadLine();
+            weapon2 = Console.ReadLine();
             Console.WriteLine("Fighter 1:");
             Console.WriteLine(class1);
             Console.WriteLine(weapon1);
@@ -204,7 +202,7 @@ namespace ParenaFightSimulator
             {
                 int winner = 0;
                 //calls the Fight Function to simulate a fight
-                winner = Fight(fighter1IN, fighter1AT, fighter1PA, fighter1LP, fighter2IN, fighter2AT, fighter2PA, fighter2LP);
+                winner = Fight(fighter1IN, fighter1AT, fighter1PA, fighter1LP, fighter2IN, fighter2AT, fighter2PA, fighter2LP, weapon1, weapon2);
                 Console.WriteLine("Fighter " + winner + " wins!");
                 fightnum = fightnum - 1;
                 //if fighter one wins
@@ -268,7 +266,7 @@ namespace ParenaFightSimulator
         }
 
         //Fight Function, outputs either 1 if fighter 1 wins or 2 if fighter 2 wins
-        static int Fight(int fighter1IN, int fighter1AT, int fighter1PA, int fighter1LP, int fighter2IN, int fighter2AT, int fighter2PA, int fighter2LP)
+        static int Fight(int fighter1IN, int fighter1AT, int fighter1PA, int fighter1LP, int fighter2IN, int fighter2AT, int fighter2PA, int fighter2LP, string weapon1, string weapon2)
         {
             int IN1 = fighter1IN;
             int AT1 = fighter1AT;
@@ -494,7 +492,7 @@ namespace ParenaFightSimulator
         }
 
         //Fight function for when user wants to find the average win percent against all other fighters
-        static string AvgFight(string fighterClass, string weapon, int numFights)
+        static string AvgFight(string fighterClass, string weapon, int numFights, string weapon1, string weapon2)
         {
 
             //create an array with a columb of classes, and 10 rows of weapons
@@ -539,7 +537,7 @@ namespace ParenaFightSimulator
                         int choosenFighterLP = FighterLP(fighterClass, weapon);
 
                         //get the winner of the fight between the opponent and choosen fighter
-                        int AvgFightWinner = Fight(choosenFighterIN, choosenFighterAT, choosenFighterPA, choosenFighterLP, avgFighterIN, avgFighterAT, avgFighterPA, avgFighterLP);
+                        int AvgFightWinner = Fight(choosenFighterIN, choosenFighterAT, choosenFighterPA, choosenFighterLP, avgFighterIN, avgFighterAT, avgFighterPA, avgFighterLP, weapon1, weapon2);
                         if (AvgFightWinner == 1)
                         {
                             //print if choosen fighter won
