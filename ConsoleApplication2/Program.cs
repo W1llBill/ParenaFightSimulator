@@ -65,15 +65,15 @@ namespace ParenaFightSimulator
                 ConsoleKeyInfo avginfo = Console.ReadKey();
                 if (avginfo.Key == ConsoleKey.Y)
                 {
-                    consoleNewLine(1);
+                    ConsoleNewLine(1);
                 }
                 else
                 {
-                    consoleNewLine(3);
+                    ConsoleNewLine(3);
                     goto start;
                 }
 
-                consoleNewLine(2);
+                ConsoleNewLine(2);
 
                 //ask for the number of fighting simulations that the user wants to run
                 Console.WriteLine("Enter the number of fights you wish to take place (NOTE: 1 means 1 fight against ALL other fighters:");
@@ -99,7 +99,7 @@ namespace ParenaFightSimulator
                 ConsoleKeyInfo avginfo2 = Console.ReadKey();
                 if (avginfo2.Key == ConsoleKey.R)
                 {
-                    consoleNewLine(3);
+                    ConsoleNewLine(3);
                     goto start;
                 }
                 else
@@ -163,11 +163,11 @@ namespace ParenaFightSimulator
             ConsoleKeyInfo info = Console.ReadKey();
             if (info.Key == ConsoleKey.Y)
             {
-                consoleNewLine(1);
+                ConsoleNewLine(1);
             }
             else
             {
-                consoleNewLine(3);
+                ConsoleNewLine(3);
                 goto start;
             }
 
@@ -176,7 +176,7 @@ namespace ParenaFightSimulator
 
         fights:
 
-            consoleNewLine(2);
+            ConsoleNewLine(2);
 
             //ask for the number of fights that the user wants to simulate
             Console.WriteLine("Enter the number of fights you wish to take place:");
@@ -892,7 +892,7 @@ namespace ParenaFightSimulator
             return fighterLP;
         }
 
-        static void consoleNewLine(int repeats)
+        static void ConsoleNewLine(int repeats)
         {
             for (int i = 0; i < repeats; i++)
             {
