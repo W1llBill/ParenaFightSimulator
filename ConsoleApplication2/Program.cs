@@ -292,14 +292,14 @@ namespace ParenaFightSimulator
                     {
                         //fighter 1 goes first
                         int roll = Roll();
-                        Console.WriteLine(roll);
+                        //Console.WriteLine(roll);
                         System.Threading.Thread.Sleep(roll);
                         //check if attack hits
                         if (roll <= AT1 && LP1 > 0 && LP2 > 0)
                         {
                             System.Threading.Thread.Sleep(roll);
                             roll = Roll();
-                            Console.WriteLine(roll);
+                            //Console.WriteLine(roll);
                             //check if parry blocks
                             if (roll >= PA2 && LP1 > 0 && LP2 > 0)
                             {
@@ -313,13 +313,13 @@ namespace ParenaFightSimulator
                         }
                         System.Threading.Thread.Sleep(roll);
                         roll = Roll();
-                        Console.WriteLine(roll);
+                        //Console.WriteLine(roll);
                         //check if attack hits,
                         if (roll <= AT2 && LP1 > 0 && LP2 > 0)
                         {
                             System.Threading.Thread.Sleep(roll);
                             roll = Roll();
-                            Console.WriteLine(roll);
+                            //Console.WriteLine(roll);
                             //check if parry blocks
                             if (roll >= PA1 && LP1 > 0 && LP2 > 0)
                             {
@@ -342,13 +342,13 @@ namespace ParenaFightSimulator
 
                         int roll = Roll();
                         System.Threading.Thread.Sleep(roll);
-                        Console.WriteLine(roll);
+                        //Console.WriteLine(roll);
                         //check if attack hits
                         if (roll <= AT2 && LP1 > 0 && LP2 > 0)
                         {
                             System.Threading.Thread.Sleep(roll);
                             roll = Roll();
-                            Console.WriteLine(roll);
+                            //Console.WriteLine(roll);
                             //check if parry blocks
                             if (roll >= PA1 && LP1 > 0 && LP2 > 0)
                             {
@@ -362,13 +362,13 @@ namespace ParenaFightSimulator
                         }
                         System.Threading.Thread.Sleep(roll);
                         roll = Roll();
-                        Console.WriteLine(roll);
+                        //Console.WriteLine(roll);
                         //check if attack hits
                         if (roll <= AT1 && LP1 > 0 && LP2 > 0)
                         {
                             System.Threading.Thread.Sleep(roll);
                             roll = Roll();
-                            Console.WriteLine(roll);
+                            //Console.WriteLine(roll);
                             //check if parry blocks
                             if (roll >= PA2 && LP1 > 0 && LP2 > 0)
                             {
@@ -391,14 +391,14 @@ namespace ParenaFightSimulator
                 {
                     //fighter 1 goes first
                     int roll = Roll();
-                    Console.WriteLine(roll);
+                    //Console.WriteLine(roll);
                     System.Threading.Thread.Sleep(roll);
                     //check if attack hits
                     if (roll <= AT1 && LP1 > 0 && LP2 > 0)
                     {
                         System.Threading.Thread.Sleep(roll);
                         roll = Roll();
-                        Console.WriteLine(roll);
+                        //Console.WriteLine(roll);
                         //check if parry blocks
                         if (roll >= PA2 && LP1 > 0 && LP2 > 0)
                         {
@@ -412,14 +412,14 @@ namespace ParenaFightSimulator
                     }
                     System.Threading.Thread.Sleep(roll);
                     roll = Roll();
-                    Console.WriteLine(roll);
+                    //Console.WriteLine(roll);
 
                     //check if attack hits
                     if (roll <= AT2 && LP1 > 0 && LP2 > 0)
                     {
                         System.Threading.Thread.Sleep(roll);
                         roll = Roll();
-                        Console.WriteLine(roll);
+                        //Console.WriteLine(roll);
                         //check if parry blocks
                         if (roll >= PA1 && LP1 > 0 && LP2 > 0)
                         {
@@ -442,13 +442,13 @@ namespace ParenaFightSimulator
 
                     int roll = Roll();
                     System.Threading.Thread.Sleep(roll);
-                    Console.WriteLine(roll);
+                    //Console.WriteLine(roll);
                     //check if attack hits
                     if (roll <= AT2 && LP1 > 0 && LP2 > 0)
                     {
                         System.Threading.Thread.Sleep(roll);
                         roll = Roll();
-                        Console.WriteLine(roll);
+                        //Console.WriteLine(roll);
                         //check if parry blocks
                         if (roll >= PA1 && LP1 > 0 && LP2 > 0)
                         {
@@ -462,13 +462,13 @@ namespace ParenaFightSimulator
                     }
                     System.Threading.Thread.Sleep(roll);
                     roll = Roll();
-                    Console.WriteLine(roll);
+                    //Console.WriteLine(roll);
                     //check if attack hits
                     if (roll <= AT1 && LP1 > 0 && LP2 > 0)
                     {
                         System.Threading.Thread.Sleep(roll);
                         roll = Roll();
-                        Console.WriteLine(roll);
+                        //Console.WriteLine(roll);
                         //check if parry blocks
                         if (roll >= PA2 && LP1 > 0 && LP2 > 0)
                         {
