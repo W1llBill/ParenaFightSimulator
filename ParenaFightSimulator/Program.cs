@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace ParenaFightSimulator
 {
@@ -35,7 +36,7 @@ namespace ParenaFightSimulator
             Console.WriteLine("");
 
             Console.WriteLine("Would you like to find the average win % of a fighter, fight two together,");
-            Console.WriteLine("or find the average win percentage of all fighters?(NOTE:Will TAKE A LONG TIME)")
+            Console.WriteLine("or find the average win percentage of all fighters?(NOTE:Will TAKE A LONG TIME)");
             Console.WriteLine("Type 'average', 'versus', or 'all'");
             //determine if user wants average or versus
             string option1 = Console.ReadLine();
@@ -89,6 +90,8 @@ namespace ParenaFightSimulator
                     Console.WriteLine("Invalid fight number! Please input another number:");
                     goto avgfightnum;
                 }
+
+
 
                 //call AvgFight to fight chosen fighter against all other types of fighters
                 AvgFight(avgclass, avgweapon, avgfightnum, weapon1, weapon2);
@@ -558,7 +561,7 @@ namespace ParenaFightSimulator
                 for (w = 1; w < 11; w++)
                 {
 
-                    int winPercent = Convert.ToInt32(AvgFight(allFighters[c, 0], allFighters[c, w], numFights));
+                    int winPercent = Convert.ToInt32(AvgFight(allFighters[c, 0], allFighters[c, w], numFights, allFighters[c, w], allFighters[c, w]));
 
                     //assign win percent to the array
                     totalWinPercent[c, w] = winPercent;
@@ -604,6 +607,12 @@ namespace ParenaFightSimulator
             int w = 1;
             int avgFightWins = 0;
             int avgNumFights = 0;
+
+
+            //Initiate StopWatch
+            Stopwatch stopWatchAvg = new Stopwatch();
+            stopWatchAvg.Start();
+
 
             //runs the for function for the indicated number of fights, each number equals 1 fight against all 100 combinations
             for (int numberOfFights = numFights; numberOfFights > 0; numberOfFights--)
@@ -658,9 +667,15 @@ namespace ParenaFightSimulator
                 }
             }
 
+            //end stopwatch
+            stopWatchAvg.Stop();
+            TimeSpan tsAvg = stopWatchAvg.Elapsed;
+            string elapsedTimeAvg = String.Format("{0:00}:{1:00}:{2:00}.{3:00}", tsAvg.Hours, tsAvg.Minutes, tsAvg.Seconds, tsAvg.Milliseconds / 10);
+
             //determine win percentage
             int avgWinPercent = 100 * avgFightWins / avgNumFights;
             Console.WriteLine("Your " + fighterClass + " wielding a " + weapon + " beat " + avgWinPercent + "% of opponents, out of a total " + avgNumFights + " fights!");
+            Console.WriteLine("Runtime: " + elapsedTimeAvg);
             return "";
         }
 
