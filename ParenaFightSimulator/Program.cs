@@ -34,8 +34,9 @@ namespace ParenaFightSimulator
             Console.WriteLine("Daggers (NOTE: Dagger Special Attack Not Implemented.)");
             Console.WriteLine("");
 
-            Console.WriteLine("Would you like to find the average win % of a fighter, or fight two together?");
-            Console.WriteLine("Type 'average' or 'versus'");
+            Console.WriteLine("Would you like to find the average win % of a fighter, fight two together,");
+            Console.WriteLine("or find the average win percentage of all fighters?(NOTE:Will TAKE A LONG TIME)")
+            Console.WriteLine("Type 'average', 'versus', or 'all'");
             //determine if user wants average or versus
             string option1 = Console.ReadLine();
             if (option1 == "average")
@@ -106,6 +107,35 @@ namespace ParenaFightSimulator
                 }
 
             }
+
+             if (option1 == "all")
+            {
+                //ask for the number of fighting simulations that the user wants to run
+                Console.WriteLine("Enter the number of fights you wish to take place (NOTE: 1 means 1 fight against ALL other fighters:");
+            avgfightnum2:
+                string avgfightstring = Console.ReadLine();
+                int avgfightnum = 0;
+                if (int.TryParse(avgfightstring, out avgfightnum))
+                {
+                    Console.WriteLine("{0} fights will take place.", avgfightnum);
+                }
+                else
+                {
+                    Console.WriteLine("Invalid fight number! Please input another number:");
+                    goto avgfightnum2;
+                }
+
+                avgAllFight(avgfightnum);
+
+                Console.WriteLine("Press F to restart or any other key to quit");
+                ConsoleKeyInfo info3 = Console.ReadKey();
+                if (info3.Key == ConsoleKey.F)
+                {
+                    goto start;
+                }
+                goto end;
+            }
+
 
             //ask for the user's chosen class and weapon for both fighters
             Console.WriteLine("Please input the first fighter's class:");
@@ -489,6 +519,77 @@ namespace ParenaFightSimulator
             Random rnd = new Random();
             int roll = rnd.Next(1, 21);
             return roll;
+        }
+
+        //Fight function to find the best fighter based on win percentage
+        static string avgAllFight(int numFights)
+        {
+
+            string[] allClasses = new string[10] { "gladiator", "warrior", "knight", "barbarian", "dwarf", "elf", "orc", "thief", "pirate", "mercenary" };
+            string[] allWeapons = new string[11] { "", "spear", "sword & shield", "mace", "2-handed sword", "axe", "bow", "2-handed axe", "saber", "orcblade", "daggers" };
+            string[,] allFighters = new string[10, 11];
+            int c = 0;
+            int w = 0;
+
+
+            Stopwatch stopWatchTotal = new Stopwatch();
+            stopWatchTotal.Start();
+
+            //for each class, run the for statement
+            for (c = 0; c < 10; c++)
+            {
+                //for each weapon, run the for statement
+                for (w = 1; w < 11; w++)
+                {
+                    //for each class and weapon, assign them to the 2 dimensional array
+                    allFighters[c, w] = allWeapons[w];
+                }
+                //reassign the first column of the 2d array to the list of the classes
+                allFighters[c, 0] = allClasses[c];
+            }
+
+            //for storing all win percentages of all fights
+            int[,] totalWinPercent = new int[10, 11];
+            int highestWinPercent = 0;
+            //for recording who ends up with the highest win percent
+            string[] highestWinPercentFighter = new string[2];
+            for (c = 0; c < 10; c++)
+            {
+                for (w = 1; w < 11; w++)
+                {
+
+                    int winPercent = Convert.ToInt32(AvgFight(allFighters[c, 0], allFighters[c, w], numFights));
+
+                    //assign win percent to the array
+                    totalWinPercent[c, w] = winPercent;
+
+                    //check if new win percent is the highest win percent
+                    if (totalWinPercent[c, w] > highestWinPercent)
+                    {
+                        highestWinPercent = totalWinPercent[c, w];
+                        Console.WriteLine(allFighters[c, 0] + " wielding " + allFighters[c, w] + " now has the highest win percent at " + highestWinPercent + "%!");
+                        highestWinPercentFighter[0] = allFighters[c, 0];
+                        highestWinPercentFighter[1] = allFighters[c, w];
+                    }
+
+
+                }
+
+            }
+
+            //end stopwatch
+            stopWatchTotal.Stop();
+            TimeSpan tsTotal = stopWatchTotal.Elapsed;
+            string elapsedTimeTotal = String.Format("{0:00}:{1:00}:{2:00}.{3:00}", tsTotal.Hours, tsTotal.Minutes, tsTotal.Seconds, tsTotal.Milliseconds / 10);
+
+
+            ConsoleNewLine(3);
+            Console.WriteLine(highestWinPercentFighter[0] + " wielding " + highestWinPercentFighter[1] + " came out on top");
+            Console.WriteLine("with a winner percentage of " + highestWinPercent + " % after " + numFights + " fights against every fighter!");
+            Console.WriteLine("Total Runtime: " + elapsedTimeTotal);
+
+
+            return "";
         }
 
         //Fight function for when user wants to find the average win percent against all other fighters
